@@ -2,17 +2,16 @@ document.getElementById('eventForm').addEventListener('submit', async (e) => {
   e.preventDefault();
   const form = e.target;
   const data = {
-    summary: `Turno para ${form.nombre.value} - ${form.servicio.value}`,
-    description: `Nombre: ${form.nombre.value}\nTeléfono: ${form.telefono.value}\nServicio: ${form.servicio.value}`,
-    date: form.fecha.value,
-    startTime: form.hora.value,
-    durationMinutes: 60,
-    calendarId: 'primary'
+    nombre: form.nombre.value,
+    telefono: form.telefono.value,
+    fecha: form.fecha.value,
+    hora: form.hora.value,
+    servicio: form.servicio.value
   };
   const resEl = document.getElementById('result');
   resEl.textContent = 'Agendando turno...';
   try {
-    const resp = await fetch('/create-event', {
+    const resp = await fetch('https://script.google.com/macros/s/AKfycbxtZi5LnbpxUHseo6wOK_bCW9P7CIaGKlG5ibCJdEdsSroO7rz7NGbOW4vP2PXiDH18/exec', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
