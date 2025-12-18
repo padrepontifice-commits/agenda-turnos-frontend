@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agendar Turno - Google Calendar</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;max-width:760px;margin:32px auto;padding:0 16px}
+    label{display:block;margin-top:12px}
+    input,textarea,select{width:100%;padding:8px;margin-top:6px}
+    button{margin-top:12px;padding:10px 14px}
+    .row{display:flex;gap:8px}
+    .row > *{flex:1}
+    #result{margin-top:12px}
+  </style>
+</head>
+<body>
+  <h1>Agendar Turno</h1>
+
+  <form id="eventForm">
+    <label>Nombre completo
+      <input name="nombre" required />
+    </label>
+    <label>Teléfono de contacto
+      <input name="telefono" type="tel" required />
+    </label>
+    <div class="row">
+      <label>Fecha del turno
+        <input type="date" name="fecha" required />
+      </label>
+      <label>Hora del turno
+        <input type="time" name="hora" required />
+      </label>
+    </div>
+    <label>Servicio
+      <select name="servicio" required>
+        <option value="">Seleccionar servicio</option>
+        <option value="Corte de pelo">Corte de pelo</option>
+        <option value="Manicura">Manicura</option>
+        <option value="Pedicura">Pedicura</option>
+        <option value="Tinte">Tinte</option>
+      </select>
+    </label>
+
+    <button type="submit">Agendar Turno</button>
+  </form>
+
+  <div id="result"></div>
+</body>
+<script src="app.js"></script>
+</html>
+
+  <div id="result"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
